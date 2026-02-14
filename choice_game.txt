@@ -1,8 +1,0 @@
-A choice game
-
-Adventure choice game
-
-Progress through stages
-
-actions random number if you do it or dont
-
