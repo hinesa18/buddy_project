@@ -1,0 +1,40 @@
+Austin's Work Plan (austin.py owner)
+====================================
+
+Main goal:
+Build the game engine and integration logic so Luke can focus only on writing story scenes.
+
+What Austin is responsible for:
+1. Input validation
+- Create a helper like `get_choice(prompt, *valid_choices)`.
+- Keep asking until the player enters a valid option.
+
+2. Scene routing
+- Keep track of the current scene (for example: "intro", "forest", "cave").
+- Call the correct Luke function based on the scene name.
+- Move to the next scene using the string returned by Luke's function.
+
+3. Game loop and endings
+- Start the game at "intro".
+- Run loop until scene becomes "win" or "lose".
+- Call ending output (win/lose) and stop cleanly.
+
+4. Error handling for integration
+- If a scene name is returned that does not exist, print a helpful message and stop.
+- Keep code simple and readable so it is easy to debug together.
+
+5. Main entry connection
+- Expose one function in `austin.py`: `run_game()`.
+- Ensure `main.py` only needs to import and call `run_game()`.
+
+Austin deliverables checklist:
+[ ] `get_choice()` is implemented and tested.
+[ ] `run_game()` loop works from start to ending.
+[ ] Scene map/routing works with Luke's scene names.
+[ ] Bad scene-name protection is included.
+[ ] `main.py` launches the game successfully.
+
+Collaboration rules:
+- Do not rewrite Luke's story text unless asked.
+- If scene names change, update routing and tell Luke exactly which names changed.
+- Keep shared interface stable: Luke scene functions should return next-scene strings.

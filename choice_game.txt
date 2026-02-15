@@ -1,0 +1,45 @@
+Adventure Choice Game Spec
+==========================
+
+Project objective:
+Build a text-based adventure where the player moves through scenes by making choices.
+
+How the game should work:
+1. Game starts in scene: "intro"
+2. The player sees story text and 2 options.
+3. Player enters a choice.
+4. Choice moves player to another scene.
+5. Repeat until reaching "win" or "lose".
+6. End message is shown and game exits.
+
+File ownership:
+- `luke.py`: Story scenes and endings (beginner-friendly logic).
+- `austin.py`: Game engine, validation, and scene routing.
+- `main.py`: Launch point only (`run_game()`).
+
+Shared integration contract:
+- Luke scene functions accept `get_choice` as an argument when choices are needed.
+- Luke scene functions return the next scene name as a string.
+- Austin's engine reads that scene name and calls the next scene function.
+
+Example scene name flow:
+intro -> forest -> win
+intro -> cave -> lose
+intro -> cave -> intro (if player goes back)
+
+Minimum required scenes:
+- intro
+- one safe path scene (example: forest)
+- one risky path scene (example: cave)
+- win ending
+- lose ending
+
+Input rules:
+- Only accept valid options shown to player.
+- If invalid input, show message and ask again.
+
+Definition of done:
+[ ] Game runs from `main.py` without errors.
+[ ] Player can reach both win and lose outcomes.
+[ ] Invalid input does not crash game.
+[ ] Scene names are consistent across `luke.py` and `austin.py`.

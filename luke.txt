@@ -1,0 +1,48 @@
+Luke's Work Plan (luke.py owner)
+================================
+
+Main goal:
+Write the story scenes and player choices using basic Python (`print`, `input`, `if/elif`).
+
+What Luke is responsible for:
+1. Story writing
+- Write scene text the player reads.
+- Keep scene descriptions short and clear.
+
+2. Choice design
+- Each scene gives the player 2 choices (simple is best).
+- Choices should lead to another scene or an ending.
+
+3. Scene functions
+- Create one function per scene in `luke.py`.
+- Each scene function should return the next scene name as text.
+  Example return values: "forest", "cave", "win", "lose"
+
+4. Endings
+- Create `win()` and `lose()` functions that print ending text.
+- Ending functions do not need advanced logic.
+
+5. Naming consistency
+- Use exact scene names agreed with Austin.
+- If a name changes, tell Austin before merging.
+
+Simple scene template (Luke can copy/paste):
+def intro(get_choice):
+    print("You are at a fork in the road.")
+    print("1) Go left")
+    print("2) Go right")
+    choice = get_choice("Pick 1 or 2: ", "1", "2")
+    if choice == "1":
+        return "forest"
+    return "cave"
+
+Luke deliverables checklist:
+[ ] At least 3 playable scenes written.
+[ ] Each scene returns a valid next scene name.
+[ ] A clear `win()` ending exists.
+[ ] A clear `lose()` ending exists.
+[ ] Scene names match Austin's routing names.
+
+Keep it beginner-friendly:
+- Avoid lists, tuples, and dictionaries in Luke's file.
+- Use only functions, `if/elif/else`, and clear print text.
