@@ -43,3 +43,47 @@ Definition of done:
 [ ] Player can reach both win and lose outcomes.
 [ ] Invalid input does not crash game.
 [ ] Scene names are consistent across `luke.py` and `austin.py`.
+
+Future RPG Roadmap
+==================
+
+Purpose:
+After the base choice game works, expand step-by-step into an RPG with combat, classes, weapons, and multiplayer.
+
+Phase 1: Stable base game (current)
+- Complete current scene flow and ending logic.
+- Keep code clean so new systems can be added safely.
+
+Phase 2: Single-player combat system
+- Add `Player` stats: hp, class, weapon, attack, defense.
+- Add `Enemy` stats: name, hp, attack, defense.
+- Add turn-based combat loop: player action -> enemy action -> repeat until KO.
+- Add win/lose combat outcomes that return to scene flow.
+
+Phase 3: Classes and weapons
+- Add class selection at game start (example: Knight, Archer, Mage).
+- Add weapon traits (example: sword balanced, bow high crit, staff spell bonus).
+- Add class + weapon stat modifiers.
+- Add simple item rewards after battles.
+
+Phase 4: Progression and world depth
+- Add XP and level-up system.
+- Add inventory and equipment swap.
+- Add multiple enemy types and mini-boss encounters.
+- Add branches where stats/gear affect available options.
+
+Phase 5: Multiplayer foundation (later)
+- Start with turn-based co-op (2 players) before real-time systems.
+- Move game state to an authoritative host/server model.
+- Sync player stats, turns, and combat outcomes.
+- Add reconnect handling and basic anti-desync checks.
+
+Recommended ownership split for future phases:
+- Austin: engine architecture, combat math, data model, save/load, networking.
+- Luke: story content, encounters, dialogue, quest text, scene polish.
+
+Future definition of done:
+[ ] Combat works in at least 3 encounters.
+[ ] At least 3 classes and 3 weapons are playable.
+[ ] Leveling and inventory are functional.
+[ ] Multiplayer prototype supports 2 connected players.
